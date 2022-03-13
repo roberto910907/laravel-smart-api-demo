@@ -1,0 +1,21 @@
+name: laravel-smart-api-demo
+recipe: laravel
+config:
+  via: nginx
+  webroot: public
+  database: mysql
+  php: '8.0'
+  xdebug: false
+
+services:
+  database:
+    portforward: 3308
+  node:
+    type: node:16.13
+
+tooling:
+  node:
+    service: node
+  yarn:
+    service: node
+    description: "Run Yarn command"
